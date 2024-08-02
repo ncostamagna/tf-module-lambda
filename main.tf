@@ -44,10 +44,6 @@ resource "aws_api_gateway_integration" "integration_lambda" {
   uri                     = aws_lambda_function.lambda.invoke_arn
 }
 
-output "aws_api_gateway_integration_lambda" {
-    value = aws_api_gateway_integration.integration_lambda
-}
-
 resource "aws_lambda_permission" "apigw_lambda" {
   statement_id  = "AllowAPIGatewayInvoke"
   action        = "lambda:InvokeFunction"
